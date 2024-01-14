@@ -1,8 +1,10 @@
 
-# Chia Server Coin CLI
+# Chia CSAM Coin CLI
 
 ## Description
 Fork of Server Coin to add an additional namespace for a federated database of known storeids that contain CSAM content. For the purposes of blocking them from DIG nodes. When a DIG node detects content they want to report as CSAM content. They will hash the DataLayer StoreID and create a coin that reports it as possible CSAM content. Each DIG node will then be responsible for consuming this federated database and double checking the stores before choosing to serve them or not.
+
+By hashing the store id in the federated database of storeids that may contain csam content, we provide a tool the DIG nodes can use to check against, while avoiding publishing the actual store ids. This way we are not inadvertantly creating a lookup service for such content.
 
 ## Installation
 
@@ -49,4 +51,3 @@ csam_coin [command] [options]
 
 ## License
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-"# chia-csam-coin" 
